@@ -6,6 +6,10 @@ export const arttir = "ARTTIR"
 export const azalt = "AZALT"
 export const sil = "SIL"
 
+export const arttirma = () => ({type:arttir})
+export const azaltma = () => ({type:azalt})
+export const silme = () => ({type:sil})
+
 export const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case arttir:

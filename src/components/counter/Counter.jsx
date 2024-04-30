@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import "./Counter.css";
-import { arttir, azalt, sil } from "../../store/counterReducer";
+import { arttir, arttirma, azalt, azaltma, sil, silme } from "../../store/counterReducer";
 
 const Counter = () => {
-  const count = useSelector((state) => state.count);
+  // const count = useSelector((state) => state.counter.count);
+  const {count} = useSelector((state) => state.counter);
   const dispatch = useDispatch();
   return (
     <div className="app">
@@ -12,20 +13,21 @@ const Counter = () => {
       <div>
         <button
           className="counter-button positive"
-          onClick={() => dispatch({ type: arttir })}
+          onClick={() => dispatch(arttirma())}
           // onClick={() => dispatch({ type: "ARTTIR" })}
         >
           increase
         </button>
         <button
           className="counter-button zero"
-          onClick={() => dispatch({ type: sil })}
+          onClick={() => dispatch(silme())}
+          // onClick={() => dispatch({ type: sil })}
         >
           reset
         </button>
         <button
           className="counter-button negative"
-          onClick={() => dispatch({ type: azalt })}
+          onClick={() => dispatch(azaltma())}
         >
           decrease
         </button>
